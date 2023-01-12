@@ -1,0 +1,27 @@
+.form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.form input {
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 8px;
+  border: 1px solid #bdbdbd;
+  margin-bottom: 1rem;
+}
+.form input[type='submit'] {
+  background: #2f80ed;
+  height: 38px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.form p {
+  color: red;
+}

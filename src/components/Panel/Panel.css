@@ -1,0 +1,21 @@
+.panel button{
+  background-color: #17a2b8;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  transition:background-color 0.3s ease-in-out; 
+ }
+ .panel button:hover{
+   background-color: #047789;
+}
+.panel .logout{
+  background-color:#ee3366 ;
+}
+.panel .logout:hover{
+  background-color:#9d0e34 ;
+}
