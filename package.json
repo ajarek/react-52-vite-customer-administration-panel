@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.5",
     "react-router-dom": "^6.6.2",
+    "reactjs-flip-card": "^2.0.2",
     "universal-cookie": "^4.0.4",
     "yup": "^0.32.11"
   },

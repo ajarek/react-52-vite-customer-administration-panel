@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../db/Firebase'
+import   Card from '../Card/Card'
+import './List.css'
 const List = () => {
   const [posts, setPosts] = useState()
 
@@ -20,14 +22,17 @@ const List = () => {
   }, [])
 
   
-  return <div>
+  return <div className='list'>
     {posts?.map((el,index) =>{
       return(
         <div key={index} className="wrapper">
-        <p>{el.name}</p>
-        <p>{el.email}</p>
-        <p>{el.phone}</p>
+        <  Card
+         name={el.name}
+         email={el.email}
+         phone={'tel '+el.phone}
+        />
         </div>
+       
       )
     })
   }
