@@ -28,7 +28,7 @@ const Card = (props) => {
       backStyle={styles.card}
       frontComponent={
         <div className='card-wrapper'>
-         <button  id={id} onClick={onClick} className="delete">❌</button>
+         
           <div className='img'>
             <img
               src={picture}
@@ -48,6 +48,7 @@ const Card = (props) => {
           <p>📞 {phone}</p>
           <p>✉️ {email}</p>
           <p>🚩 {address}</p>
+          <button  id={id} onClickCapture={onClick} className="delete">❌</button>
         </div>
       }
       direction={'vertical'}
