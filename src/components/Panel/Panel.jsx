@@ -6,21 +6,26 @@ import List from '../../components/List/List'
 import Cookies from 'universal-cookie'
 const cookies = new Cookies()
 import './Panel.css'
-//T5Gy3VEyvpsEM7Zc4GJy
+
 const Panel = () => {
+  const [add, setAdd] =useState(false)
   const handleSubmit = async (data) => {
-    console.log(data);
+    
     try {
-      await addDoc(collection(db, 'customerList'), {
+      await addDoc(collection(db, 'customerList'), { 
+        profession:data.profession,
         email:data.email,
         name: data.name,
-        phone: data.phone    
+        phone: data.phone,
+        address:data.address, 
+        picture:data. picture   
       })
     } catch (err) {
       alert(err)
     }
+    setAdd(false)
   }
-  const [add, setAdd] =useState(false)
+ 
   return (
     <div className='panel'>
       <h1>Customer administrative panel 🛠️</h1>
