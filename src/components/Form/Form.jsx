@@ -5,6 +5,7 @@ import './Form.css'
 
 export const Form = (props) => {
  const { onSubmit, label, Name, Profession, Email, Phone, Address, Picture } = props
+ 
   const schema = yup.object().shape({
     name:yup.string().required() ,
     profession:yup.string().required() ,
@@ -30,8 +31,9 @@ export const Form = (props) => {
         <input
           type='text'
           placeholder='👤Name...'
-          value={Name}
+           defaultValue={Name}
           {...register('name')}
+          
         />     
       <p>{errors.name?.message}</p> 
 
@@ -39,7 +41,7 @@ export const Form = (props) => {
           type='text'
           placeholder='👩🏻‍⚕️ Profession...'
           {...register('profession')}
-          value={Profession}
+           defaultValue={Profession}
         />
       <p>{errors.profession?.message}</p> 
 
@@ -47,7 +49,7 @@ export const Form = (props) => {
         type='text'
         placeholder='✉️ Email...'
         {...register('email')}
-        value={Email}
+         defaultValue={Email}
       />
       <p>{errors.email?.message}</p>
 
@@ -55,7 +57,7 @@ export const Form = (props) => {
         type='phone'
         placeholder='📞 Phone...'
         {...register('phone')}
-        value={Phone}
+         defaultValue={Phone}
       />
       <p>{errors.phone?.message}</p>
 
@@ -63,7 +65,7 @@ export const Form = (props) => {
           type='text'
           placeholder='🚩 Address...'
           {...register('address')}
-          value={Address}
+           defaultValue={Address}
         />     
       <p>{errors.address?.message}</p> 
 
@@ -71,13 +73,13 @@ export const Form = (props) => {
           type='text'
           placeholder='📷 htpps://Picture.png'
           {...register('picture')}
-          value={Picture}
+           defaultValue={Picture}
         /> 
       <p>{errors.picture?.message}</p> 
 
       <input
         type='submit'
-        value={label}
+         value={label}
       />
     </form>
   )
