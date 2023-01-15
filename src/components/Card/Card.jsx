@@ -3,7 +3,7 @@ import ReactFlipCard from 'reactjs-flip-card'
 import './Card.css'
 const Card = (props) => {
 
-  const { name, email, phone, profession, picture, address, onClick, id }=props
+  const { name, email, phone, profession, picture, address, onClick, onClickEdit, id  }=props
   const styles = {
     card: {
       width: '340px',
@@ -44,11 +44,12 @@ const Card = (props) => {
         </div>
       }
       backComponent={
-        <div>
+        <div className='back-component'>
           <p>📞 {phone}</p>
           <p>✉️ {email}</p>
           <p>🚩 {address}</p>
           <button  id={id} onClickCapture={onClick} className="delete">❌</button>
+          <button  id={id} onClickCapture={onClickEdit} className="edit">🖊️</button>
         </div>
       }
       direction={'vertical'}

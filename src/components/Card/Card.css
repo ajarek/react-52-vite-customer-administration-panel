@@ -11,13 +11,18 @@
 .card-wrapper .name h2{
   font-weight: 400;
 }
-.card-wrapper .delete{
+.back-component .delete, .back-component .edit{
   position: absolute;
-  top: 0%;
-  right:0%;
+  bottom: 0%;
+  left:0%;
   z-index: 100;
   background-color: transparent;
+  transition: all 0.3s ease-in-out;
 }
-.card-wrapper .delete:hover{
+.back-component .edit{
+  left: 12%;
+}
+.back-component .delete:hover,.back-component .edit:hover{
   background-color: transparent;
+  transform: scale(1.2);
 }

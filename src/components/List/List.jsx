@@ -4,46 +4,36 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { db } from '../../db/Firebase'
 import   Card from '../Card/Card'
 import './List.css'
-const List = () => {
+const List = ({onClickEdit}) => {
   const [posts, setPosts] = useState()
-  const [lol, setLol]=useState(false)
+  
+  const getDoc = async () => {
+    const querySnapshot = await getDocs(collection(db, 'customerList'))
+    const postData = []
+    querySnapshot.forEach((doc) =>
+      postData.push({ ...doc.data(), id: doc.id })
+    )
+    setPosts(postData)
+  }   
+
 
   useEffect(() => {
-    const getDoc = async () => {
-      const querySnapshot = await getDocs(collection(db, 'customerList'))
-      const postData = []
-      querySnapshot.forEach((doc) =>
-        postData.push({ ...doc.data(), id: doc.id })
-      )
-      setPosts(postData)
-    }   
+    
     getDoc()
   }, [])
 
   const deleteItem = async(e)=>{
    const itemId= e.target.id
    await deleteDoc(doc(db, "customerList", `${itemId}`));
-  
-    const getDoc = async () => {
-      const querySnapshot = await getDocs(collection(db, 'customerList'))
-      const postData = []
-      querySnapshot.forEach((doc) =>
-        postData.push({ ...doc.data(), id: doc.id })
-      )
-      setPosts(postData)
-    }   
-    getDoc()
-  
-   
+    getDoc() 
    }
 
-  
- 
   return <div className='list'>
     {posts?.map((el,index) =>{
       return(
         <div key={index} className="wrapper">
         <  Card
+         onClickEdit={onClickEdit}
          id={el.id}
          onClick={deleteItem}
          name={el.name}
@@ -53,8 +43,7 @@ const List = () => {
          picture={el.picture}
          address={el.address}
         />
-        </div>
-       
+        </div>       
       )
     })
   }
