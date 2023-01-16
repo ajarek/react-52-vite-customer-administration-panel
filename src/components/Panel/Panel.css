@@ -19,3 +19,9 @@
 .panel .logout:hover{
   background-color:#9d0e34 ;
 }
+@media (max-width:800px) {
+  .panel .button,.panel h1{
+    width: 100%;
+    text-align: center;
+  }
+}

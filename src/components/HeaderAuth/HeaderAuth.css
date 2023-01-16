@@ -4,3 +4,6 @@
   align-items: center;
   justify-content: flex-start;
 }
+.header-auth h2{
+  text-align: center;
+}

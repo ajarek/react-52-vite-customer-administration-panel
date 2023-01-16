@@ -11,8 +11,10 @@ const Panel = () => {
   const [add, setAdd] = useState(false)
   const [userId, setUserId] = useState(null)
   const [docId, setDocId] = useState(null)
+ 
 
   const handleSubmit = async (data) => {
+
     try {
       await addDoc(collection(db, 'customerList'), {
         profession: data.profession,
@@ -25,6 +27,7 @@ const Panel = () => {
     } catch (err) {
       alert(err)
     }
+
     setAdd(false)
     setUserId(null)
   }
@@ -61,6 +64,7 @@ const Panel = () => {
 
   return (
     <div className='panel'>
+     
       <h1>Customer administrative panel 🛠️</h1>
      
       {userId ? (

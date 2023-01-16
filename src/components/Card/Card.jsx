@@ -6,8 +6,8 @@ const Card = (props) => {
   const { name, email, phone, profession, picture, address, onClick, onClickEdit, id  }=props
   const styles = {
     card: {
-      width: '340px',
-      height: '189px',
+      width: '290px',
+      height: '178px',
       color: 'white',
       borderRadius: 10,
       cursor: 'pointer',
@@ -53,7 +53,7 @@ const Card = (props) => {
         </div>
       }
       direction={'vertical'}
-      containerStyle={{ width: '340px', height: '189px' }}
+      containerStyle={{ width: '290px', height: '178px' }}
     />
   )
 }

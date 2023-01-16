@@ -6,8 +6,10 @@
 }
 body {
   font-family: 'Poppins',  serif;
+
 }
 .App{
+margin: 0 auto;
 max-width: 1440px;
 width: 100%;
 min-height: 100vh;
@@ -16,5 +18,6 @@ justify-content: center;
 align-items: center;
 background: #161623;
 color: #ffffff;
+padding: 1rem;
 }
 
