@@ -1,4 +1,7 @@
 # react-52-vite-customer-administration-panel
+* npm install
+* add file .env from VITE_KEY_ID "your Fairbase"
+* start: npm run dev
 
 ![Schowek02](https://user-images.githubusercontent.com/61388692/212779560-d587acb3-894a-45b4-8e9b-323b0572a895.png)
 
